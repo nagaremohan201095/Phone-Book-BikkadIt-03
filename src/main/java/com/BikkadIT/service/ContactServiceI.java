@@ -9,4 +9,6 @@ public interface ContactServiceI {
 	boolean save(Contact contact);
 	
 	List<Contact> getAllContact();
+	
+	Contact getContactById(Integer cid);
 }
