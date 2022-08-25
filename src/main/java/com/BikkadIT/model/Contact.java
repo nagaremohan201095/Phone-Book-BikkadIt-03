@@ -34,8 +34,8 @@ public class Contact {
 	private String contactNumber;
 	@Column(name = "CONTACT_EMAIL")
 	private String contactEmail;
-	@Column(name = "ACTIVATE_SWITCH")
-	private Character activateSwitch;
+	@Column(name = "ACTIVE_SWITCH")
+	private Character activeSwitch;
 	@Column(name = "CREATED_DATE",updatable=false)
 	@CreationTimestamp
 	private LocalDate createdDate;
