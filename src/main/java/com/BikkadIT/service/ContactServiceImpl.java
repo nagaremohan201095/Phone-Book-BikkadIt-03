@@ -11,7 +11,8 @@ import com.BikkadIT.repository.ContactRepository;
 
 @Service
 public class ContactServiceImpl implements ContactServiceI{
-    @Autowired
+  
+	@Autowired
 	private ContactRepository contactRepository;
 	
 	@Override
@@ -39,5 +40,18 @@ public class ContactServiceImpl implements ContactServiceI{
 		return findById;
 	}
 
-}
+	@Override
+	public boolean updateContact(Contact contact) {
+		Contact update = contactRepository.save(contact);
+		
+		if(update ==null) {
+			
+			return false;
+		}
+		else {
+		return true;
+	}
 
+  }
+
+}

@@ -39,7 +39,7 @@ public class Contact {
 	@Column(name = "CREATED_DATE",updatable=false)
 	@CreationTimestamp
 	private LocalDate createdDate;
-	@Column(name = "UPDATED_DATE",updatable=false)
+	@Column(name = "UPDATED_DATE",insertable = false)
 	@UpdateTimestamp
 	private LocalDate updatedDate;
 	

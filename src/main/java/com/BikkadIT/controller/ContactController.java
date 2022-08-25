@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -66,7 +67,26 @@ public class ContactController {
 		
 		return new ResponseEntity<Contact>(contactById,HttpStatus.OK);
 		
+		}
+      
+
+@PutMapping(value ="/updateContact",consumes = "application/json" )
+public ResponseEntity<String> updateContact(@RequestBody  Contact contact){
+	
+		boolean saveContact = contactServiceI.updateContact(contact);
+	   
+		if(saveContact==true) {
 		
-		
-	}
+			String msg="Contact update Successfully";
+			
+			return new ResponseEntity<String>(msg,HttpStatus.OK);
+		}
+		else {
+			String msg="Contact not update Successfully";
+	   
+	   return new ResponseEntity<String>(msg,HttpStatus.BAD_REQUEST);
+	   
+	   
+	   }
+   }
 }
